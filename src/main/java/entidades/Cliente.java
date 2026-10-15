@@ -10,6 +10,7 @@ public class Cliente {
 	private String apellido;
 	private String sexo;
 	private String fecha_nacimiento;
+	private String direccion;
 	private String nacionalidad;
 	private String localidad;
 	private String provincia; 
@@ -22,7 +23,7 @@ public class Cliente {
 	}
 	
 	public Cliente(int id_cliente, String dni, String cuil, String nombre, String apellido,
-	        String sexo, String fecha_nacimiento, String nacionalidad, String localidad,
+	        String sexo, String fecha_nacimiento, String direccion, String nacionalidad, String localidad,
 	        String provincia, String correo_electronico, String telefono) {
 	    this.id_cliente = id_cliente;
 	    this.dni = dni;
@@ -31,6 +32,7 @@ public class Cliente {
 	    this.apellido = apellido;
 	    this.sexo = sexo;
 	    this.fecha_nacimiento = fecha_nacimiento;
+	    this.direccion = direccion;
 	    this.nacionalidad = nacionalidad;
 	    this.localidad = localidad;
 	    this.provincia = provincia;
@@ -94,6 +96,14 @@ public class Cliente {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
@@ -134,18 +144,21 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "Cliente [id_cliente=" + id_cliente + ", dni=" + dni + ", cuil=" + cuil + ", nombre=" + nombre
 				+ ", apellido=" + apellido + ", sexo=" + sexo + ", fecha_nacimiento=" + fecha_nacimiento
-				+ ", nacionalidad=" + nacionalidad + ", localidad=" + localidad + ", provincia=" + provincia
-				+ ", correo_electronico=" + correo_electronico + ", telefono=" + telefono + "]";
+				+ ", direccion=" + direccion + ", nacionalidad=" + nacionalidad + ", localidad=" + localidad
+				+ ", provincia=" + provincia + ", correo_electronico=" + correo_electronico + ", telefono=" + telefono
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(apellido, correo_electronico, cuil, dni, fecha_nacimiento, id_cliente, localidad,
-				nacionalidad, nombre, provincia, sexo, telefono);
+		return Objects.hash(apellido, correo_electronico, cuil, direccion, dni, fecha_nacimiento,
+				Integer.valueOf(id_cliente), localidad, nacionalidad, nombre, provincia, sexo, telefono);
 	}
 
 	@Override
@@ -158,11 +171,12 @@ public class Cliente {
 			return false;
 		Cliente other = (Cliente) obj;
 		return Objects.equals(apellido, other.apellido) && Objects.equals(correo_electronico, other.correo_electronico)
-				&& Objects.equals(cuil, other.cuil) && Objects.equals(dni, other.dni)
-				&& Objects.equals(fecha_nacimiento, other.fecha_nacimiento) && id_cliente == other.id_cliente
-				&& Objects.equals(localidad, other.localidad) && Objects.equals(nacionalidad, other.nacionalidad)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(provincia, other.provincia)
-				&& Objects.equals(sexo, other.sexo) && Objects.equals(telefono, other.telefono);
+				&& Objects.equals(cuil, other.cuil) && Objects.equals(direccion, other.direccion)
+				&& Objects.equals(dni, other.dni) && Objects.equals(fecha_nacimiento, other.fecha_nacimiento)
+				&& id_cliente == other.id_cliente && Objects.equals(localidad, other.localidad)
+				&& Objects.equals(nacionalidad, other.nacionalidad) && Objects.equals(nombre, other.nombre)
+				&& Objects.equals(provincia, other.provincia) && Objects.equals(sexo, other.sexo)
+				&& Objects.equals(telefono, other.telefono);
 	}
 	
 	
