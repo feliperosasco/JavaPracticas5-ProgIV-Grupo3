@@ -48,3 +48,111 @@ h1 {
 .btn:hover {
     background-color: #2055c9;
 }
+
+* { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Contenedor principal flexbox */
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Estilos para el Menú Lateral Reutilizable (menu.jsp) */
+.sidebar {
+    width: 220px;
+    background-color: #3182ce;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar h3 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    background-color: #2b6cb0;
+    margin: 0;
+}
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.sidebar a.active, .sidebar a:hover {
+    background-color: #1a4971;
+    font-weight: bold;
+}
+
+/* Contenido Principal */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+.header-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: #333;
+}
+.user-info {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilos del Formulario */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    max-width: 800px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+.form-group input, .form-group select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-guardar {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.btn-guardar:hover {
+    background-color: #2b6cb0;
+}
+
+.msg-error { color: #e53e3e; margin-bottom: 15px; font-size: 14px; }
+.msg-exito { color: #38a169; margin-bottom: 15px; font-size: 14px; }
