@@ -37,7 +37,7 @@
                 <% } %>
 
                 <!-- FORMULARIO HTML5 -->
-                <form action="ServletAgregarCliente" method="post">
+                <form action="ServletAltaCliente" method="post">
                     <div class="grid-container">
                         
                         <div class="form-group">
